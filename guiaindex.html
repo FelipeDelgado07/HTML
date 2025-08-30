@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagina semantica</title>
+  <link rel="stylesheet" href="estilos.css">  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f7f7f7;
+    }
+    header, nav, main, footer, section {
+      margin-bottom: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+    nav ul li {
+      display: inline;
+      margin-right: 15px;
+    }
+    nav a {
+      text-decoration: none;
+      color: #007bff;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    form {
+      background: #fafafa;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    fieldset {
+      border: 2px solid #007bff;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    legend {
+      font-weight: bold;
+      color: #007bff;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #555;
+      padding: 10px;
+      text-align: left;
+    }
+    thead {
+      background-color: #f2f2f2;
+    }
+    tfoot {
+      background-color: #ddd;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <!--encabezado -->
+  <header>
+    <h1>Mi pagina semantica</h1>
+    <nav>
+      <ul>
+        <!-- Enlaces internos -->
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#articulos">Artículos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <!-- Enlace externo -->
+        <li><a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank">Aprender HTML</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Imagen decorativa del encabezado -->
+  <img src="Tecnoliga.jfif" alt="Banner con diseño abstracto representando tecnología" width="100%" height="200">
+
+  <!--contenido principal -->
+  <main>
+    <section id="inicio">
+      <h2>Esta es mi página semántica</h2>
+      <p>En esta página estoy aprendiendo cómo utilizar las etiquetas mejor.</p>
+      <!-- Enlace externo -->
+      <p>Si quieres profundizar más visita 
+        <a href="https://www.w3schools.com/html/" target="_blank">W3Schools</a>.
+      </p>
+    </section>
+
+    <section id="articulos">
+      <article>
+        <h3>Artículo 1</h3>
+        <p>En este artículo estoy escribiendo un párrafo.</p>
+      </article>
+
+      <article>
+        <h3>Introducción a HTML</h3>
+        <p>Primero va el valor <b>article</b> para un artículo, después <b>h1, h2, h3</b> etc. y por último la <b>p</b> de párrafo.</p>
+      </article>
+    </section>
+
+    <!--seccion de contacto -->
+    <section id="contacto">
+      <h2>Contáctanos</h2>
+      <form action="#" method="POST">
+        <fieldset>
+          <legend>Datos Personales</legend>
+          <label for="nombre">Nombre Completo:</label>
+          <input type="text" id="nombre" name="nombre" required maxlength="50" placeholder="Fabian Delgado">
+
+          <label for="email">Correo Electrónico:</label>
+          <input type="email" id="email" name="email" required placeholder="Fdel6538@gmail.com">
+
+          <label for="telefono">Teléfono:</label>
+          <input type="tel" id="telefono" name="telefono" required pattern="[0-9]{10}" placeholder="Solo números, 10 dígitos">
+
+          <label for="edad">Edad:</label>
+          <input type="number" id="edad" name="edad" required min="18" max="99" placeholder="Entre 18 y 99">
+        </fieldset>
+
+        <fieldset>
+          <legend>Información Adicional</legend>
+          <label for="direccion">Dirección:</label>
+          <input type="text" id="direccion" name="direccion" required maxlength="100" placeholder="Escribe tu dirección">
+
+          <label for="gustos">Gustos o intereses:</label>
+          <textarea id="gustos" name="gustos" required minlength="5" maxlength="200" placeholder="Ejemplo: música, deportes, lectura..."></textarea>
+
+          <label for="genero">Género:</label>
+          <select id="genero" name="genero" required>
+            <option value="">Seleccione una opción</option>
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+            <option value="otro">Otro</option>
+          </select>
+        </fieldset>
+
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" required minlength="10" maxlength="300" placeholder="Escribe tu mensaje aquí"></textarea>
+
+        <!-- Botón -->
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
+    <!-- Tabla simulando los datos enviados -->
+    <h3>Listado de Mensajes Recibidos</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Correo</th>
+          <th>Teléfono</th>
+          <th>Edad</th>
+          <th>Mensaje</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Fabian Delgado</td>
+          <td>Fdel6538@gmail.com</td>
+          <td>3016234393</td>
+          <td>19</td>
+          <td>Estoy interesado en el servicio de diseño web.</td>
+        </tr>
+        <tr>
+          <td>María López</td>
+          <td>marialopez@example.com</td>
+          <td>3159876543</td>
+          <td>32</td>
+          <td>Quiero más información sobre consultoría digital.</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="5">Total de registros: 2</td>
+        </tr>
+      </tfoot>
+    </table>
+  </main>
+
+  <!--Pie de pagina-->
+  <footer>
+    <p>&copy;2025 Mi página semántica | <a href="#inicio">Volver arriba</a></p>
+  </footer>
+</body>
+</html>
